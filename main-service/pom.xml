@@ -23,7 +23,23 @@
             <artifactId>common</artifactId>
             <version>0.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>local</id>
+            <name>local</name>
+            <url>file://D:/environment/apache-maven-3.8.4/maven-repo</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

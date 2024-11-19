@@ -1,0 +1,24 @@
+server:
+  port: 8080 # TODO: 项目启动时的端口
+spring:
+  application:
+    name: hm-service # TODO:注册微服务使用的名称
+  profiles:
+    active: cloud # TODO:生效的配置文件
+  datasource:
+    url: jdbc:mysql://${project.db.host}:${project.db.port}/${project.db.database}?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${project.db.un}
+    password: ${project.db.pw}
+mybatis-plus:
+  configuration:
+    # 默认枚举处理器
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    # 全局更新策略和主键策略
+    db-config:
+      update-strategy: not_null
+      id-type: auto
+      logic-delete-field: is_deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0

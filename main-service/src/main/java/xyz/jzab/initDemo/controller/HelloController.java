@@ -15,6 +15,6 @@ import xyz.jzab.common.enums.RespCode;
 public class HelloController {
     @GetMapping
     public BaseResponse<Void> hi(){
-        return BaseResponse.success().build();
+        return BaseResponse.builder(RespCode.NOT_FOUND).build();
     }
 }
