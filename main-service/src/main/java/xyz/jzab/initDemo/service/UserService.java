@@ -1,6 +1,6 @@
 package xyz.jzab.initDemo.service;
 
-import xyz.jzab.initDemo.domain.User;
+import xyz.jzab.initDemo.domain.po.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

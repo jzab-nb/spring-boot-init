@@ -1,14 +1,21 @@
 package xyz.jzab.initDemo.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import xyz.jzab.common.domain.BaseResponse;
+import xyz.jzab.initDemo.domain.po.User;
+import xyz.jzab.initDemo.service.UserService;
 
 /**
  * @author JZAB
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
+    // 使用final类型的变量和@RequiredArgsConstructor注解实现依赖注入
+    private final UserService userService;
+
     @PostMapping
     public BaseResponse<Void> addUser(){
         return BaseResponse.success( ).build( );
@@ -31,8 +38,8 @@ public class UserController {
 
 
     @GetMapping("/{id}")
-    public BaseResponse<Void> getUser(@PathVariable String id){
-        return BaseResponse.success( ).build( );
+    public BaseResponse<User> getUser(@PathVariable Long id){
+        return BaseResponse.success( ).body(userService.getById(id));
     }
 
     @GetMapping("/page")

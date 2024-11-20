@@ -1,7 +1,7 @@
 package xyz.jzab.initDemo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import xyz.jzab.initDemo.domain.User;
+import xyz.jzab.initDemo.domain.po.User;
 import xyz.jzab.initDemo.service.UserService;
 import xyz.jzab.initDemo.mapper.UserMapper;
 import org.springframework.stereotype.Service;
