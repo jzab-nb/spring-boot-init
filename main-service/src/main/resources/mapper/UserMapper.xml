@@ -7,6 +7,7 @@
     <resultMap id="BaseResultMap" type="xyz.jzab.initDemo.domain.po.User">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="salt" column="salt" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="role" column="role" jdbcType="VARCHAR"/>
             <result property="userStatus" column="user_status" jdbcType="VARCHAR"/>

@@ -1,5 +1,6 @@
 package xyz.jzab.initDemo.service;
 
+import xyz.jzab.initDemo.domain.dto.user.UserAddRequest;
 import xyz.jzab.initDemo.domain.po.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -9,5 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2024-11-20 20:02:02
 */
 public interface UserService extends IService<User> {
-
+    void addUser(UserAddRequest request);
 }

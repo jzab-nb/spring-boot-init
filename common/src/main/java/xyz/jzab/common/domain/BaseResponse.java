@@ -45,9 +45,17 @@ public class BaseResponse<T> extends ResponseEntity<BaseResponse.InnerResponse> 
         return new Builder().code(RespCode.OK);
     }
 
+    public static <T> BaseResponse<T> success(T body){
+        return new Builder().code(RespCode.OK).body(body);
+    }
+
     // 失败的简化调用
     public static Builder error(){
         return new Builder().code(RespCode.FAIL);
+    }
+
+    public static <T> BaseResponse<T> error(T body){
+        return new Builder().code(RespCode.FAIL).body(body);
     }
 
     // 自定义响应状态码的调用

@@ -6,7 +6,8 @@ use init;
 create table if not exists init.`user`
 (
 `id` bigint not null auto_increment comment '主键' primary key,
-`username` varchar(256) not null comment '用户名',
+`username` varchar(256) not null unique comment '用户名',
+`salt` varchar(256) not null default '' comment '用户盐',
 `password` varchar(256) not null comment '密码',
 `role` varchar(256) default '0' not null comment '角色',
 `user_status` varchar(256) default '0' not null comment '状态',
