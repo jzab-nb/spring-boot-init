@@ -29,7 +29,8 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public BaseResponse<Void> deleteUser(@PathVariable String id){
-        return BaseResponse.success(null);
+        userService.removeById(id);
+        return BaseResponse.success().build();
     }
 
     @PutMapping("/{id}")
