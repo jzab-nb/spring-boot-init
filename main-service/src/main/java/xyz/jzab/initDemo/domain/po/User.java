@@ -1,9 +1,8 @@
 package xyz.jzab.initDemo.domain.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.digest.MD5;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import xyz.jzab.common.enums.UserRoles;
 import xyz.jzab.common.enums.UserStatus;
@@ -18,6 +17,15 @@ import java.util.Date;
 @TableName(value ="user")
 @Data
 public class User implements Serializable {
+    public void digestPassword(){
+        if(StrUtil.isBlank(this.getPassword())) return;
+        this.setPassword(
+            MD5.create( ).digestHex16(
+                    this.getPassword( )+this.getSalt()
+            )
+        );
+    }
+
     /**
      * 主键
      */
@@ -62,6 +70,7 @@ public class User implements Serializable {
     /**
      * 是否删除(0-未删, 1-已删)
      */
+    @TableLogic
     private Integer isDeleted;
 
     @TableField(exist = false)

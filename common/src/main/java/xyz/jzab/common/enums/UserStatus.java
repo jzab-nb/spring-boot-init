@@ -6,8 +6,9 @@ import lombok.Getter;
 
 @Getter
 public enum UserStatus {
-    ACTIVE(1,"激活"),
-    BAN(0,"禁用");
+    BAN(0,"禁用"),
+    ACTIVE(1,"激活");
+
 
     @EnumValue
     private final int code;

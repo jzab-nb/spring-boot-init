@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 public enum RespCode {
     OK(200,"OK",HttpStatus.OK),
     CREATED(201,"已创建",HttpStatus.CREATED),
+    PARAM_ERROR(400,"参数错误",HttpStatus.BAD_REQUEST),
+    CONFLICT(409,"资源冲突",HttpStatus.CONFLICT),
     NOT_FOUND(404,"请求的资源不存在",HttpStatus.NOT_FOUND),
     FAIL(500,"失败",HttpStatus.INTERNAL_SERVER_ERROR);
     private final int code;
