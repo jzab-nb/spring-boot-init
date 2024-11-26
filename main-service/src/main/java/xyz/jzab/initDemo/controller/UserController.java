@@ -7,14 +7,20 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import xyz.jzab.common.domain.BaseResponse;
+import xyz.jzab.common.domain.PageDTO;
 import xyz.jzab.common.enums.RespCode;
 import xyz.jzab.common.exception.BusinessException;
 import xyz.jzab.initDemo.domain.dto.user.UserAddRequest;
+import xyz.jzab.initDemo.domain.dto.user.UserLoginRequest;
+import xyz.jzab.initDemo.domain.dto.user.UserRegisterRequest;
 import xyz.jzab.initDemo.domain.dto.user.UserUpdateRequest;
 import xyz.jzab.initDemo.domain.po.User;
 import xyz.jzab.initDemo.domain.query.UserPageQuery;
+import xyz.jzab.initDemo.domain.vo.UserLoginVo;
 import xyz.jzab.initDemo.domain.vo.UserVo;
 import xyz.jzab.initDemo.service.UserService;
+
+import java.util.function.Supplier;
 
 /**
  * @author JZAB
@@ -67,17 +73,19 @@ public class UserController {
 
     // 分页获取用户信息
     @PostMapping("/page")
-    public BaseResponse<Page<User>> pageUser(@RequestBody UserPageQuery query){
-        return BaseResponse.success(userService.page(query.toDefaultPageEntity()));
+    public BaseResponse<PageDTO<UserVo>> pageUser(@RequestBody UserPageQuery query){
+        return BaseResponse.success(
+            PageDTO.of(userService.page(query.toDefaultPageEntity()),UserVo.class)
+        );
     }
 
     @PostMapping("/login")
-    public BaseResponse<Void> login(){
-        return BaseResponse.success( ).build( );
+    public BaseResponse<UserLoginVo> login(@RequestBody UserLoginRequest request){
+        return BaseResponse.success(userService.login(request));
     }
 
     @PostMapping("/register")
-    public BaseResponse<Void> register(){
-        return BaseResponse.success( ).build( );
+    public BaseResponse<UserLoginVo> register(@RequestBody UserRegisterRequest request){
+        return BaseResponse.success(userService.register(request));
     }
 }

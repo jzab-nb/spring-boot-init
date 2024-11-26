@@ -7,7 +7,10 @@ import xyz.jzab.common.enums.RespCode;
 import xyz.jzab.common.enums.UserStatus;
 import xyz.jzab.common.exception.BusinessException;
 import xyz.jzab.initDemo.domain.dto.user.UserAddRequest;
+import xyz.jzab.initDemo.domain.dto.user.UserLoginRequest;
+import xyz.jzab.initDemo.domain.dto.user.UserRegisterRequest;
 import xyz.jzab.initDemo.domain.po.User;
+import xyz.jzab.initDemo.domain.vo.UserLoginVo;
 import xyz.jzab.initDemo.mapper.UserMapper;
 import xyz.jzab.initDemo.service.UserService;
 
@@ -32,6 +35,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setSalt(salt);
         user.digestPassword();
         this.save(user);
+    }
+
+    @Override
+    public UserLoginVo login(UserLoginRequest request) {
+        return null;
+    }
+
+    @Override
+    public UserLoginVo register(UserRegisterRequest request) {
+        return null;
     }
 }
 

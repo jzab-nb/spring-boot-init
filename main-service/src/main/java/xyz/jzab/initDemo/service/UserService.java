@@ -1,8 +1,11 @@
 package xyz.jzab.initDemo.service;
 
 import xyz.jzab.initDemo.domain.dto.user.UserAddRequest;
+import xyz.jzab.initDemo.domain.dto.user.UserLoginRequest;
+import xyz.jzab.initDemo.domain.dto.user.UserRegisterRequest;
 import xyz.jzab.initDemo.domain.po.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import xyz.jzab.initDemo.domain.vo.UserLoginVo;
 
 /**
 * @author 86131
@@ -11,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserService extends IService<User> {
     void addUser(UserAddRequest request);
+
+    UserLoginVo login(UserLoginRequest request);
+    UserLoginVo register(UserRegisterRequest request);
 }
