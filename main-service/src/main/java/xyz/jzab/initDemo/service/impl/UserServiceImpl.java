@@ -2,10 +2,12 @@ package xyz.jzab.initDemo.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import xyz.jzab.common.enums.RespCode;
 import xyz.jzab.common.enums.UserStatus;
 import xyz.jzab.common.exception.BusinessException;
+import xyz.jzab.common.utils.JwtTool;
 import xyz.jzab.initDemo.domain.dto.user.UserAddRequest;
 import xyz.jzab.initDemo.domain.dto.user.UserLoginRequest;
 import xyz.jzab.initDemo.domain.dto.user.UserRegisterRequest;
@@ -22,8 +24,12 @@ import java.util.UUID;
 * @createDate 2024-11-20 20:02:02
 */
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     implements UserService {
+
+    private final JwtTool jwtTool;
+
     @Override
     public void addUser(UserAddRequest request) {
         if(!lambdaQuery().eq(User::getUsername,request.getUsername()).list().isEmpty()){
@@ -39,11 +45,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     @Override
     public UserLoginVo login(UserLoginRequest request) {
-        return null;
+        UserLoginVo vo = new UserLoginVo( );
+        vo.setToken(jwtTool.createToken(1L));
+        // 登录
+        return vo;
     }
 
     @Override
     public UserLoginVo register(UserRegisterRequest request) {
+        // 注册
         return null;
     }
 }
