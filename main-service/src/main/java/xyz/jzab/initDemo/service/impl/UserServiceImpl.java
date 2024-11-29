@@ -97,10 +97,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
         // 注册
         return BeanUtils.toBean(
-                user,UserLoginVo.class,
-                (source, target) -> {
-                    target.setToken(jwtTool.createToken(source.getId()));
-                }
+            user,UserLoginVo.class,
+            (source, target) -> {
+                target.setToken(jwtTool.createToken(source.getId()));
+            }
         );
     }
 }

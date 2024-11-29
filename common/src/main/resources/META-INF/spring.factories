@@ -2,4 +2,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   xyz.jzab.common.exception.GlobalExceptionHandler,\
   xyz.jzab.common.config.MybatisConfig,\
   xyz.jzab.common.config.SecurityConfig,\
-  xyz.jzab.common.utils.JwtTool
+  xyz.jzab.common.utils.JwtTool,\
+  xyz.jzab.common.config.MvcConfig
