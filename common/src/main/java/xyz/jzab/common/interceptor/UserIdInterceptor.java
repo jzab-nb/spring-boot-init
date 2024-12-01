@@ -22,7 +22,7 @@ public class UserIdInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // 读取用户信息并保存到
+        // 读取用户信息并保存到线程变量中
         String token = request.getHeader("token");
         if(StrUtil.isNotBlank(token)){
             Long id = jwtTool.parseToken(token);
