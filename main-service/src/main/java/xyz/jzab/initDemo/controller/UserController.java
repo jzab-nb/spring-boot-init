@@ -6,9 +6,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+import xyz.jzab.common.annotation.AuthCheck;
 import xyz.jzab.common.domain.BaseResponse;
 import xyz.jzab.common.domain.PageDTO;
 import xyz.jzab.common.enums.RespCode;
+import xyz.jzab.common.enums.UserRoles;
 import xyz.jzab.common.exception.BusinessException;
 import xyz.jzab.initDemo.domain.dto.user.UserAddRequest;
 import xyz.jzab.initDemo.domain.dto.user.UserLoginRequest;
@@ -34,12 +36,14 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
+    @AuthCheck(mustRole = {UserRoles.ADMIN})
     public BaseResponse<Void> addUser(@RequestBody UserAddRequest userAddRequest){
         userService.addUser(userAddRequest);
         return BaseResponse.builder(RespCode.CREATED).build();
     }
 
     @DeleteMapping("/{id}")
+    @AuthCheck(mustRole = {UserRoles.ADMIN})
     public BaseResponse<Void> deleteUser(@PathVariable String id){
         if(userService.getById(id)==null) throw new BusinessException(RespCode.NOT_FOUND,"要删除的用户不存在");
         userService.removeById(id);
@@ -48,6 +52,7 @@ public class UserController {
 
     // 局部更新 全量更新是put
     @PatchMapping("/{id}")
+    @AuthCheck(mustRole = UserRoles.ADMIN)
     public BaseResponse<Void> update(@PathVariable Long id, @RequestBody UserUpdateRequest request){
         if(userService.getById(id)==null) throw new BusinessException(RespCode.NOT_FOUND,"要更新的用户不存在");
         User user = BeanUtil.toBean(request, User.class);

@@ -63,6 +63,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             throw new BusinessException(RespCode.PARAM_ERROR,"用户名或密码错误");
         }else{
             User user = userList.get(0);
+            if(user.getUserStatus().equals(UserStatus.BAN)) throw new BusinessException(RespCode.NO_AUTH_ERROR,"用户被禁用");
             // 密码和盐拼接再计算md5
             String pwd = MD5.create( ).digestHex16(request.getPassword()+user.getSalt());
             if(!pwd.equals(user.getPassword())) throw new BusinessException(RespCode.PARAM_ERROR,"用户名或密码错误");

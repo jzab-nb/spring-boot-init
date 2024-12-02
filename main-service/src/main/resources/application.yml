@@ -42,4 +42,10 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - xyz.jzab.initDemo.controller
-
+logging:
+  level:
+    root: info
+  pattern:
+    dateformat: yyyy年MM月dd日 HH:mm:ss:SSS
+  file:
+    path: "logs/${spring.application.name}"

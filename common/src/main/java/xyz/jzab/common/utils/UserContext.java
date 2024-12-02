@@ -10,7 +10,7 @@ public class UserContext {
         tl.set(id);
     }
 
-    public static long getUser(){
+    public static Long getUser(){
         return tl.get();
     }
 

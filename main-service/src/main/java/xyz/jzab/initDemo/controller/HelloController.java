@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import xyz.jzab.common.annotation.AuthCheck;
 import xyz.jzab.common.domain.BaseResponse;
 import xyz.jzab.common.enums.RespCode;
 
@@ -14,6 +15,7 @@ import xyz.jzab.common.enums.RespCode;
 @RequestMapping("/hi")
 public class HelloController {
     @GetMapping
+    @AuthCheck
     public BaseResponse<Void> hi(){
         return BaseResponse.builder(RespCode.NOT_FOUND).build();
     }

@@ -1,0 +1,26 @@
+20:58:36:085  INFO 3100 --- [main] xyz.jzab.initDemo.MainApplication        : Starting MainApplication using Java 1.8.0_281 on LAPTOP-9K9PHKTE with PID 3100 (D:\java\code\yupi\ab-springboot-init\main-service\target\classes started by 86131 in D:\java\code\yupi\ab-springboot-init)
+20:58:36:090  INFO 3100 --- [main] xyz.jzab.initDemo.MainApplication        : The following 1 profile is active: "cloud"
+20:58:37:874  INFO 3100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+20:58:37:884  INFO 3100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+20:58:37:884  INFO 3100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+20:58:38:113  INFO 3100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+20:58:38:114  INFO 3100 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1947 ms
+20:58:42:108  INFO 3100 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+20:58:42:234  INFO 3100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+20:58:42:235  INFO 3100 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+20:58:42:237  INFO 3100 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+20:58:42:270  INFO 3100 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+20:58:42:441  INFO 3100 --- [main] xyz.jzab.initDemo.MainApplication        : Started MainApplication in 7.127 seconds (JVM running for 8.883)
+2024年12月02日 20:59:32:225  INFO 26916 --- [main] xyz.jzab.initDemo.MainApplication        : Starting MainApplication using Java 1.8.0_281 on LAPTOP-9K9PHKTE with PID 26916 (D:\java\code\yupi\ab-springboot-init\main-service\target\classes started by 86131 in D:\java\code\yupi\ab-springboot-init)
+2024年12月02日 20:59:32:230  INFO 26916 --- [main] xyz.jzab.initDemo.MainApplication        : The following 1 profile is active: "cloud"
+2024年12月02日 20:59:34:069  INFO 26916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024年12月02日 20:59:34:080  INFO 26916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024年12月02日 20:59:34:080  INFO 26916 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2024年12月02日 20:59:34:332  INFO 26916 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024年12月02日 20:59:34:333  INFO 26916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2015 ms
+2024年12月02日 20:59:38:177  INFO 26916 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2024年12月02日 20:59:38:289  INFO 26916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024年12月02日 20:59:38:291  INFO 26916 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+2024年12月02日 20:59:38:294  INFO 26916 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024年12月02日 20:59:38:328  INFO 26916 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024年12月02日 20:59:38:508  INFO 26916 --- [main] xyz.jzab.initDemo.MainApplication        : Started MainApplication in 6.984 seconds (JVM running for 8.723)

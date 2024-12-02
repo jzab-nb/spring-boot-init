@@ -8,7 +8,9 @@ public enum RespCode {
     OK(200,"OK",HttpStatus.OK),
     CREATED(201,"已创建",HttpStatus.CREATED),
     PARAM_ERROR(400,"参数错误",HttpStatus.BAD_REQUEST),
-    UNAUTHORIZED(401,"认证失败",HttpStatus.UNAUTHORIZED),
+    NOT_LOGIN(40101,"未登录",HttpStatus.UNAUTHORIZED),
+    TOKEN_ERROR(40102,"token错误",HttpStatus.UNAUTHORIZED),
+    NO_AUTH_ERROR(40103,"无权限",HttpStatus.UNAUTHORIZED),
     CONFLICT(409,"资源冲突",HttpStatus.CONFLICT),
     NOT_FOUND(404,"请求的资源不存在",HttpStatus.NOT_FOUND),
     FAIL(500,"失败",HttpStatus.INTERNAL_SERVER_ERROR);
